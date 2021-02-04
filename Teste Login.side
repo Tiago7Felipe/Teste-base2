@@ -1,0 +1,256 @@
+{
+  "id": "86e826ce-85d5-4804-88e9-b280397e6983",
+  "version": "2.0",
+  "name": "Teste Login",
+  "url": "http://mantis-prova.base2.com.br",
+  "tests": [{
+    "id": "5c3e4da6-ed4f-4639-a9bb-3d17fb107775",
+    "name": "CT_Password_Vazia",
+    "commands": [{
+      "id": "01c21bf4-4198-41e1-9dd9-c4671c1c04cb",
+      "comment": "Acessar a página Mantis",
+      "command": "open",
+      "target": "https://mantis-prova.base2.com.br/login_page.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f99e8b69-290a-4f92-8e54-fc61dca13d87",
+      "comment": "visão da página",
+      "command": "setWindowSize",
+      "target": "665x721",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2b2fdab-cb18-4377-adf5-93e3b7329ea7",
+      "comment": "Clicar em username",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.row-1:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "937bcca3-ad94-420f-ac35-fba067f60c89",
+      "comment": "digitar o username",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.row-1:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "tiago.soares"
+    }, {
+      "id": "45e2e743-9f2a-4a76-af41-b003b7cda8a5",
+      "comment": "clicar no botão de login",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f12533a-e17d-46f3-87ab-76d8fff80709",
+      "comment": "aguardar 7 segundos",
+      "command": "pause",
+      "target": "7000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c74aaf3f-9834-47ad-b8dc-9004a24d86eb",
+      "comment": "validar a mensagem de erro",
+      "command": "assertText",
+      "target": "css=font",
+      "targets": [
+        ["css=font", "css:finder"],
+        ["xpath=//font", "xpath:position"],
+        ["xpath=//font[contains(.,'Your account may be disabled or blocked or the username/password you entered is incorrect.')]", "xpath:innerText"]
+      ],
+      "value": "Your account may be disabled or blocked or the username/password you entered is incorrect."
+    }]
+  }, {
+    "id": "caa8f672-c259-4dbe-9567-792ca39d4ba6",
+    "name": "CT_UserName_Vazio",
+    "commands": [{
+      "id": "7e575bc5-56c4-47cb-8a6a-6998a70179f5",
+      "comment": "acessar a página Mantis",
+      "command": "open",
+      "target": "https://mantis-prova.base2.com.br/login_page.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cbd07fe9-48e4-41bb-9c6f-92210e2f583b",
+      "comment": "visão da página",
+      "command": "setWindowSize",
+      "target": "665x721",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fd5cc2ca-24ba-4a4e-b8d9-e2a35499735f",
+      "comment": "clique no campo de senha",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.row-2:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d88b4b19-f634-4449-9bfd-d58f2ba6530b",
+      "comment": "digitar a senha",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.row-2:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "98554211"
+    }, {
+      "id": "fc2b111a-c60b-4566-8e62-55a55c044406",
+      "comment": "clicar no botão login",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eeca8504-f17c-4740-83c1-af668e0f80d1",
+      "comment": "aguardar 7 segundos",
+      "command": "pause",
+      "target": "7000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4c05dbda-3a2d-4eb5-9439-3024ef9abfb6",
+      "comment": "validar a mensagem de erro",
+      "command": "assertText",
+      "target": "css=font",
+      "targets": [
+        ["css=font", "css:finder"],
+        ["xpath=//font", "xpath:position"],
+        ["xpath=//font[contains(.,'Your account may be disabled or blocked or the username/password you entered is incorrect.')]", "xpath:innerText"]
+      ],
+      "value": "Your account may be disabled or blocked or the username/password you entered is incorrect."
+    }]
+  }, {
+    "id": "5230babe-a85e-4e77-b382-9277fffb001d",
+    "name": "CT_DadosValidos",
+    "commands": [{
+      "id": "58b13fd6-7b1d-4a80-a4ba-772bdc171ec4",
+      "comment": "Acessar a página",
+      "command": "open",
+      "target": "https://mantis-prova.base2.com.br/login_page.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a5aa7f8e-7758-46ad-bbc9-a2a179e86f17",
+      "comment": "Visão da página",
+      "command": "setWindowSize",
+      "target": "665x722",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c7e2776-cda1-4a68-9fae-bf4ab663938a",
+      "comment": "clica em username",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.row-1:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23f1839b-5564-4edf-a687-918441ab6320",
+      "comment": "digita o username",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.row-1:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "tiago.soares"
+    }, {
+      "id": "6084038f-f348-46c7-b952-caabfe6b7f03",
+      "comment": "digita a senha",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.row-2:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "98554211"
+    }, {
+      "id": "8428872e-10f4-416e-8f35-8a6140a6b47c",
+      "comment": "clica em login",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@value='Login']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b27f02d-0e40-4ca3-b67b-c587fe792cf7",
+      "comment": "aguardar 7 seg",
+      "command": "pause",
+      "target": "7000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db107163-6313-498d-9398-a7d0c0d7d7c1",
+      "comment": "validação do usuário logado",
+      "command": "assertText",
+      "target": "css=.login-info-left",
+      "targets": [
+        ["css=.login-info-left", "css:finder"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'Logged in as: tiago.soares (Tiago Soares - reporter)')]", "xpath:innerText"]
+      ],
+      "value": "Logged in as: tiago.soares (Tiago Soares - reporter)"
+    }, {
+      "id": "2688db22-a731-4fd8-b1d8-56b4da4fa98b",
+      "comment": "logout",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=a:nth-child(7)", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/logout_page.php')]", "xpath:href"],
+        ["xpath=//a[7]", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2bdad7af-351b-4ad2-8434-df647648c399",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5c3e4da6-ed4f-4639-a9bb-3d17fb107775"]
+  }],
+  "urls": ["http://mantis-prova.base2.com.br/"],
+  "plugins": []
+}
