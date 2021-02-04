@@ -28,16 +28,23 @@ public class CTPasswordVaziaTest {
   }
   [Test]
   public void cTPasswordVazia() {
+    //Acessar o site
     driver.Navigate().GoToUrl("https://mantis-prova.base2.com.br/login_page.php");
+    //Visão do site
     driver.Manage().Window.Size = new System.Drawing.Size(665, 721);
+    //clique em username
     driver.FindElement(By.Name("username")).Click();
+    //digitando o username
     driver.FindElement(By.Name("username")).SendKeys("tiago.soares");
+    //clique no botão login
     driver.FindElement(By.CssSelector(".button")).Click();
+    //aguardar 7 segundos
     try {
       Thread.Sleep(7000);
     } catch {
       Console.WriteLine("{0} Exception caught.", e);
     }
+    // Validar a mensagem de erro.
     Assert.That(driver.FindElement(By.CssSelector("font")).Text, Is.EqualTo("Your account may be disabled or blocked or the username/password you entered is incorrect."));
   }
 }
